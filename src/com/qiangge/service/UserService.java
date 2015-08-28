@@ -46,4 +46,16 @@ public class UserService {
 			throw new AppException("com.qiangge.UserService.login");
 		}
 	}
+	public int getRole(int id) throws AppException {
+		int role = -1;
+		try {
+			// 获取用户role
+			role = userDao.getRoleById(id);
+			return role;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new AppException("com.qiangge.UserService.getRole");
+		}
+	}
 }
